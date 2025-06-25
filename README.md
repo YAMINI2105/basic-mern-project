@@ -1,4 +1,4 @@
-# Cloud Basic Project ☁️
+# Basic Project ☁️
 
 A simple full-stack task manager using MongoDB, Express.js, React, and Node.js (MERN stack).
 
