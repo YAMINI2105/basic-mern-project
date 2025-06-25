@@ -57,8 +57,9 @@ const TasksList = () => {
                   >
                     <i className="bi bi-pencil-square"></i>
                   </Button>
-                  <Button variant="primary">
-                    <i className="bi bi-trash3" onClick={() => deleteTask(task)}></i>
+                  <Button variant="primary"
+                    onClick={() => deleteTask(task)}>
+                    <i className="bi bi-trash3"></i>
                   </Button>
                 </td>
               </tr>
@@ -72,6 +73,9 @@ const TasksList = () => {
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
+        onTaskupdated={() =>
+          dispatch(getTasksFromServer())
+        }
       />
     </>
   );

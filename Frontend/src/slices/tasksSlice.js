@@ -1,4 +1,5 @@
 import { createSlice,createAsyncThunk } from "@reduxjs/toolkit";
+import AddTask from "../components/AddTask";
 
 const initialState = {
     tasksList:[],
@@ -7,13 +8,13 @@ const initialState = {
     error:''
 }
 
-const BASE_URL = 'https://localhost:4000'
+const BASE_URL = 'http://localhost:4000/api/tasks'
 
 //GET
 export const getTasksFromServer = createAsyncThunk(
     "tasks/getTasksFromServer",
     async (_,{rejectWithValue}) => {
-        const response = await fetch(BASE_URL)
+        const response = await fetch(BASE_URL + '/get-tasks')
         if (response.ok) {
             const jsonResponse = await response.json()
             return jsonResponse
@@ -34,7 +35,7 @@ export const addTaskToServer = createAsyncThunk(
                 "Content-type":"application/json; charset=UTF-8"
             }
         }
-        const response = await fetch(BASE_URL,options)
+        const response = await fetch(BASE_URL + '/add-task',options)
         if (response.ok) {
             const jsonResponse = await response.json()
             return jsonResponse

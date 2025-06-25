@@ -14,9 +14,19 @@ const MyVerticallyCenteredModal = (props) => {
   const [id, setId] = useState(0);
   const dispatch = useDispatch()
 
-  const updateTask = () => {
-    props.onHide();
-    dispatch(updateTaskInServer({_id:id,title,description}))
+  const updateTask = async (e) => {
+    e.preventDefault();
+    
+    const resultAction = await dispatch(
+      updateTaskInServer({ _id: id, title, description })
+    );
+  
+    if (updateTaskInServer.fulfilled.match(resultAction)) {
+      console.log("✅ Task updated:", resultAction.payload);
+      props.onHide();
+    } else {
+      console.error("❌ Update failed:", resultAction.payload);
+    }
   };
 
   useEffect(() => {
