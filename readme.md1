@@ -1,0 +1,30 @@
+# ☁️ Basic MERN Task Manager
+
+A simple full-stack task manager built with the **MERN stack**: MongoDB, Express.js, React, and Node.js.
+
+---
+
+## 🚀 Features
+
+- ✅ Add, update, and delete tasks
+- ⚡ Real-time UI updates with Redux Toolkit
+- 🗃️ MongoDB integration (local or MongoDB Atlas)
+- 🌐 RESTful API powered by Express.js
+
+---
+
+## 🛠️ Tech Stack
+
+**Frontend**  
+- React.js  
+- Bootstrap  
+- Redux Toolkit (for state management)
+
+**Backend**  
+- Node.js  
+- Express.js  
+
+**Database**  
+- MongoDB (Local or hosted on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas))
+
+---
